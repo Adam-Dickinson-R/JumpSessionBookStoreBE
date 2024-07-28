@@ -15,29 +15,24 @@ public class AdminControllers {
         @Autowired
         private AdminService adminService;
 
-        @GetMapping("/admins")
+        @GetMapping("/get-admins")
         public List<Admin> getAllAdmins() {
             return adminService.getAllAdmins();
         }
 
-        @GetMapping("/admins/{id}")
+        @GetMapping("/get-admin/{id}")
         public ResponseEntity<Admin> getAdminById(@PathVariable Long id) {
             return adminService.getAdminById(id)
                     .map(ResponseEntity::ok)
                     .orElseGet(() -> ResponseEntity.notFound().build());
         }
 
-        @PostMapping("/admins")
+        @PostMapping("/create-admin")
         public Admin createAdmin(@RequestBody Admin admin) {
             return adminService.createAdmin(admin);
         }
 
-//        @PutMapping("/admins/{id}")
-//        public ResponseEntity<Admin> updateAdmin(@PathVariable Long id, @RequestBody Admin adminDetails) {
-//            return ResponseEntity.ok(adminService.updateAdmin(id, adminDetails));
-//        }
-
-        @DeleteMapping("/admins/{id}")
+        @DeleteMapping("/delete-admin/{id}")
         public ResponseEntity<Void> deleteAdmin(@PathVariable Long id) {
             adminService.deleteAdmin(id);
             return ResponseEntity.noContent().build();

@@ -16,24 +16,24 @@ public class BookController {
     @Autowired
     private BookService bookService;
 
-    @GetMapping("/books")
+    @GetMapping("/get-books")
     public List<Book> getAllAdmins() {
         return bookService.getAllBooks();
     }
 
-    @GetMapping("/book/{id}")
+    @GetMapping("/get-book/{id}")
     public ResponseEntity<Book> getBookById(@PathVariable Long id) {
         return bookService.getBookById(id)
                 .map(ResponseEntity::ok)
                 .orElseGet(()->ResponseEntity.notFound().build());
     }
 
-    @PostMapping("/books")
+    @PostMapping("/create-book")
     public Book createBook(@RequestBody Book book){
         return bookService.createBook(book);
     }
 
-    @DeleteMapping("/admins/{id}")
+    @DeleteMapping("/delete-book/{id}")
     public ResponseEntity<Void> deleteBook(@PathVariable Long id) {
         bookService.deleteBook(id);
         return ResponseEntity.noContent().build();
