@@ -8,7 +8,7 @@ import retro.rabbit.jumpsessionbe.Services.UserService;
 import java.util.List;
 
 @RestController
-@RequestMapping(value = "/api")
+@RequestMapping(value = "/api/user")
 public class UserController {
 
     private UserService userService;
@@ -17,9 +17,9 @@ public class UserController {
         this.userService = userService;
     }
 
-    @GetMapping(value = "/get-user")
+    @GetMapping(value = "/get-users")
     public List<User> getUsers() {
-      return userService.getUser();
+      return userService.getUsers();
     }
 
     @GetMapping(value = "/get-user/{id}")
