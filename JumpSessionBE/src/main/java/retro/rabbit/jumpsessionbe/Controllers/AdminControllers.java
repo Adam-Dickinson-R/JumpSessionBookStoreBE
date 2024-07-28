@@ -20,12 +20,12 @@ public class AdminControllers {
             return adminService.getAllAdmins();
         }
 
-//        @GetMapping("/admins/{id}")
-//        public ResponseEntity<Admin> getAdminById(@PathVariable Long id) {
-//            return adminService.getAdminById(id)
-//                    .map(ResponseEntity::ok)
-//                    .orElseGet(() -> ResponseEntity.notFound().build());
-//        }
+        @GetMapping("/admins/{id}")
+        public ResponseEntity<Admin> getAdminById(@PathVariable Long id) {
+            return adminService.getAdminById(id)
+                    .map(ResponseEntity::ok)
+                    .orElseGet(() -> ResponseEntity.notFound().build());
+        }
 
         @PostMapping("/admins")
         public Admin createAdmin(@RequestBody Admin admin) {
