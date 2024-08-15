@@ -9,16 +9,16 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "\"User\"")
-public class User {
+@Table(name = "userbooks")
+public class UserBooks {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String name;
-    private String surname;
-    private String email;
+    private Long userId;
+    private Long bookId;
 
-    @Column(name = "phone_number")
-    private String phoneNumber;
+    @Column(name = "checked_out")
+    private Boolean checkedOut;
+
 }

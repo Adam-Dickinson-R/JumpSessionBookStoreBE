@@ -23,6 +23,10 @@ public class UserService {
         return userRepository.findById(id).orElse(null);
     }
 
+    public User createUser(User user) {
+        return userRepository.save(user);
+    }
+
     public boolean deleteUserById(Long id) {
         userRepository.deleteById(id);
         return true;

@@ -27,6 +27,12 @@ public class UserController {
         return userService.getUserById(id);
     }
 
+    @PostMapping(value = "/create-user")
+    public ResponseEntity<User> createUser(@RequestBody User user) {
+        userService.createUser(user);
+        return ResponseEntity.ok(user);
+    }
+
     @DeleteMapping(value = "/delete-user/{id}")
     public ResponseEntity<String> deleteUser(@PathVariable Long id) {
         if (userService.deleteUserById(id)) {
