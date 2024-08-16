@@ -1,8 +1,5 @@
 # JumpSessionBookStoreBE
 
-## Overview
-This application is designed to [briefly describe the purpose of the application, e.g., manage employee training and development, analyze corporate tax avoidance, etc.]. It provides a range of features to facilitate [key functionalities, e.g., data analysis, endpoint analysis, etc.] and improve [specific outcomes, e.g., employee productivity, compliance with legal frameworks, etc.].
-
 ## Tech Stack
 -Frontend: Angular v16
 -Backend: Node.js, Java Spring Boot
@@ -27,3 +24,15 @@ To install the application, follow these steps:
 -Open a terminal.
 -Clone the repo
 `git clone https://github.com/your-repo-name.git`
+
+- Run Docker Componse
+Run the following command in your terminal
+```
+docker-compose up
+```
+This will create and run the docker container
+
+To stop the container via the terminal run
+```
+docker-compose down
+```
